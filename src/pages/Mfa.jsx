@@ -73,7 +73,7 @@ function Mfa() {
 
     if(isCodeSent) {
         return <>
-        <div className="w-full flex justify-center items-center min-h-[90vh]">
+        <div className="w-full flex justify-center items-center min-h-[90vh] px-4">
           <div className="w-full border sm:w-[360px] p-4">
               
               <div className="w-full">
@@ -103,7 +103,7 @@ function Mfa() {
       </>
     } else {
         return <>
-          <div className="w-full flex justify-center items-center min-h-[90vh]">
+          <div className="w-full flex justify-center items-center min-h-[90vh] px-4">
             <div className="w-full border sm:w-[360px] p-4">
                 
                 <div className="w-full">
@@ -121,7 +121,7 @@ function Mfa() {
                         <p className="font-bold">Select Provider</p>
                         {userMfaProviders.map((provider, index) => <div className="w-full flex mt-2" key={index}>
                                 <label htmlFor="" className="block text-left uppercase">{provider.provider}</label>
-                                <input className="ml-2" type="radio" name="provider" value="mail" onChange={(e) => setSelectedProvider(e.target.value)} />
+                                <input className="ml-2" type="radio" name="provider" value={provider.provider} onChange={(e) => setSelectedProvider(e.target.value)} />
                             </div> )}
                         
                     </div>

@@ -34,11 +34,11 @@ export default function Transactions() {
 
     return <>
     <NavBar />
-    <div className="w-full flex justify-center">
-        <div className="w-full xl:w-[1130px] mt-10">
+    <div className="w-full flex justify-center overflow-x-auto relative">
+        <div className="w-full xl:w-[1130px] overflow-x-auto px-4 mt-10 relative">
             <p className="text-2xl font-bold">Transactions</p>
 
-            <div className="w-full mt-12">
+            <div className="w-full overflow-x-auto mt-12 relative">
                 <table className="w-full">
                     <thead className="uppercase w-full">
                         <tr>

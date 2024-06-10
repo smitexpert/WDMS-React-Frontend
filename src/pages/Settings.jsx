@@ -90,7 +90,7 @@ function Settings() {
         <NavBar />
 
         <div className="w-full flex justify-center mt-8">
-            <div className="w-full xl:w-[1130px]">
+            <div className="w-full xl:w-[1130px] px-4">
                 <div className="w-full">
                     <p className="text-3xl font-bold">Settings</p>
                 </div>
@@ -112,8 +112,8 @@ function Settings() {
                 <div className="w-full mt-6">
                     <p className="text-xl font-bold">Available MFA</p>
                     <div className="w-full mt-4">
-                        {userMfaProviders && userMfaProviders.map((item, index) => <div key={index} className="w-[420px] flex justify-start items-center">
-                                <div className="w-full mt-4 uppercase" key={item.provider}>{item.provider}</div>
+                        {userMfaProviders && userMfaProviders.map((item, index) => <div key={index} className="w-full xl:w-[420px] flex justify-between items-center">
+                                <div className="mt-4 uppercase" key={item.provider}>{item.provider}</div>
                                 <button onClick={() => removeProviderHanlder(item.provider)}>Remove</button>
                             </div>
                         )}

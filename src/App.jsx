@@ -40,7 +40,7 @@ function App() {
       <NavBar />
       
       <div className="w-full flex justify-center mt-12">
-        <div className="w-full xl:w-[1130px] flex justify-center">
+        <div className="w-full xl:w-[1130px] px-4 flex justify-center">
           <div className="w-full">
             <div className="w-full">
               <p className="text-xl">Available Wallet and Balance</p>
@@ -54,7 +54,7 @@ function App() {
               
             </div>
 
-            <div className="w-full grid grid-cols-2 gap-10 mt-12">
+            <div className="w-full grid grid-cols-1 xl:grid-cols-2 gap-10 mt-12">
               <div className="w-full">
 
                 <ManageDenomination wallet={wallets[0]} updateUserWallet={getUserWallets} />
