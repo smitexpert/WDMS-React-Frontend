@@ -27,14 +27,23 @@ export default function ProtectedRouteComponent({children}) {
                     setIsAuth('authorized');
 
         } catch (error) {
+
+
             setIsAuth('unauthorized');
+            
+            if(error.response.status === 401) {
+                window.localStorage.removeItem('access_token');
+                navigate('/login');
+            }
+            
             if(error.response.data.data.response_code == '40441') {
                 navigate('/verify-email')
-            }
-
-            if(error.response.data.data.response_code == '40442') {
+            } else if(error.response.data.data.response_code == '40442') {
                 navigate('/mfa')
             }
+
+
+            
         }
 
     }

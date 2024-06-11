@@ -1,11 +1,26 @@
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import axios from "axios";
 
 function NavBar() {
 
+    const {authToken} = useAuth();
     const navigate = useNavigate();
 
-    const handleLogout = () => {
+    const handleLogout = async() => {
         window.localStorage.removeItem('access_token');
+
+        try {
+            const response = await axios.post('/logout', {}, {
+                headers: {
+                    Authorization: 'Bearer ' + authToken
+                }
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+
         navigate('/login');
     }
 
