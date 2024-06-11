@@ -11,6 +11,7 @@ import VerifyEmail from './pages/VerifyEmail.jsx';
 import Mfa from './pages/Mfa.jsx';
 import Settings from './pages/Settings.jsx';
 import Transactions from './pages/Transactions.jsx';
+import AddWallet from './pages/AddWallet.jsx';
 
 axios.defaults.baseURL = 'http://localhost:8101/api/'
 axios.defaults.headers.post['Content-Type'] = 'application/json';
@@ -35,6 +36,10 @@ const routes = [
   {
     path: '/transactions',
     element: <ProtectedRouteComponent><Transactions /></ProtectedRouteComponent>,
+  },
+  {
+    path: '/add-wallet',
+    element: <ProtectedRouteComponent><AddWallet /></ProtectedRouteComponent>,
   },
   {
     path: '/login',

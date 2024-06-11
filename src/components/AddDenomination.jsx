@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 
 function AddDenomination({wallet, updateUserWallet}) {
@@ -25,7 +25,7 @@ function AddDenomination({wallet, updateUserWallet}) {
             })
 
             if(response)
-                updateUserWallet()
+                updateUserWallet(wallet)
 
             setName("")
             setDenomination("")
